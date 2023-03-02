@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends "layout.html" %}
+
+{% block content %}
+
+<div class="container my-5">
+    <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div style="font-weight: bold;">Task One</div>
+            Description of what I have to do.
+          </div>
+          <span class="badge bg-success rounded-pill">Due Date Relaxed</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div style="font-weight: bold;">Task Two</div>
+            Description of what I have to do.
+          </div>
+          <span class="badge bg-warning rounded-pill">Due Date Zulala</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div style="font-weight: bold;">Task Tree</div>
+            Description of what I have to do.
+          </div>
+          <span class="badge bg-danger rounded-pill">Due Important!</span>
+        </li>
+      </ol>
+</div>
+
+<div class="legend">
+    Low Priority <span class="legend-square bg-success"></span>
+    Medium Priority <span class="legend-square bg-warning"></span>
+    High Priority <span class="legend-square bg-danger"></span>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+.legend {
+  position: absolute;
+  bottom: 60px; /* adjust this value to position the legend just above the footer */
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.legend-square {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+.bg-success {
+  background-color: #28a745;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+}
+
+.bg-danger {
+  background-color: #dc3545;
+}
