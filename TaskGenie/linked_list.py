@@ -1,5 +1,5 @@
 class Node():
-    def __init__(self, data, next_node, previous_node):
+    def __init__(self, data, next_node=None, previous_node=None):
         self.data = data
         self.next_node = next_node
         self.previous_node = previous_node
@@ -8,6 +8,7 @@ class LinkedList():
     def __init__(self):
         self.head = None
         self.tail = None
+        self.length = 0
         
     def print_list(self):
         #Adds existing nodes to a string for visualization
@@ -25,10 +26,12 @@ class LinkedList():
         if self.head == None:
             self.tail = node
             self.head = node
+            self.length += 1
             return
             
         self.head.previous_node = node
         self.head = node
+        self.length += 1
         
     def add_end(self, data):
         #If the list is empty uses .add_beginning instead
@@ -40,6 +43,7 @@ class LinkedList():
         node = Node(data, None, self.tail)
         self.tail.next_node = node
         self.tail = node
+        self.length += 1
         
     def delete(self, data):
         node = self.head
@@ -67,7 +71,10 @@ class LinkedList():
                 node.next_node.previous_node = node.previous_node 
                 return
             node = node.next_node
-            
+    
+    def size(self):
+        return self.length
+    
     def search(self, data):
         node = self.head
         
@@ -76,11 +83,13 @@ class LinkedList():
         while node:
             if node.data == data:
                 return node
-    
-from task import Task    
-    
-    
-ll = LinkedList()
+ 
+
+
+   
+# from task import Task    
+   
+# ll = LinkedList()
 
 # milena_present = Task("Milena Present", "Saturday", "Medium", "Going to Marienplatz to buy the present at the langerie shop")
 # waqar_call = Task("Calling Waqar", "Today", "High", "Calling Waqar to wish happy birthday")        
@@ -95,6 +104,6 @@ ll = LinkedList()
 # ll.add_beginning(bede_call)
 # ll.add_beginning(interview)
 # ll.add_beginning(shower)
-# ll.print_list()
+# #ll.print_list()
 
 # print(ll.head.data.title)

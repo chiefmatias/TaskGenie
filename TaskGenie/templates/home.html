@@ -4,35 +4,29 @@
 {% block content %}
 
 <div class="container my-5">
-    <ol class="list-group list-group-numbered">
+  <ol class="list-group list-group-numbered">
+    <div class="container my-5">
+      {% set task = namespace(node = tasks.head) %}
+      {% for _ in range(tasks.size()) %}
         <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
-            <div style="font-weight: bold;">Task One</div>
-            Description of what I have to do.
+            <div style="font-weight: bold;">{{task.node.data.title}}</div>
+            {{task.node.data.description}}
           </div>
-          <span class="badge bg-success rounded-pill">Due Date Relaxed</span>
+          <span class="badge bg-{{task.node.data.priority}} rounded-pill">{{task.node.data.due}} </span>
+          {% set task.node = task.node.next_node %}
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div style="font-weight: bold;">Task Two</div>
-            Description of what I have to do.
-          </div>
-          <span class="badge bg-warning rounded-pill">Due Date Zulala</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
-          <div class="ms-2 me-auto">
-            <div style="font-weight: bold;">Task Tree</div>
-            Description of what I have to do.
-          </div>
-          <span class="badge bg-danger rounded-pill">Due Important!</span>
-        </li>
-      </ol>
+    {% endfor %}
+  </ol>
 </div>
 
-<div class="legend">
-    Low Priority <span class="legend-square bg-success"></span>
-    Medium Priority <span class="legend-square bg-warning"></span>
-    High Priority <span class="legend-square bg-danger"></span>
+<div class="legend my-5">
+  Low Priority <span class="legend-square bg-low"></span>
+  Medium Priority <span class="legend-square bg-medium"></span>
+  High Priority <span class="legend-square bg-high"></span>
 </div>
+
+
+
 
 {% endblock content %}

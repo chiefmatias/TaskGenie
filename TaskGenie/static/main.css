@@ -1,9 +1,7 @@
 .legend {
-  position: absolute;
-  bottom: 60px; /* adjust this value to position the legend just above the footer */
-  left: 0;
-  right: 0;
+  position: relative;
   padding: 10px;
+  bottom: 10px;
   text-align: center;
 }
 
@@ -17,14 +15,19 @@
   vertical-align: middle;
 }
 
-.bg-success {
+.form-check-input:checked + .form-check-label {
+  text-decoration: line-through;
+}
+
+
+.bg-low {
   background-color: #28a745;
 }
 
-.bg-warning {
+.bg-medium {
   background-color: #ffc107;
 }
 
-.bg-danger {
+.bg-high {
   background-color: #dc3545;
 }
